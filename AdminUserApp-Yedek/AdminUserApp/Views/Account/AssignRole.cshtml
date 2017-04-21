@@ -1,0 +1,38 @@
+﻿@model IEnumerable<AdminUserApp.Models.User>
+
+@{
+    ViewBag.Title = "AssignRole";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.rol.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rol.RoleName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "RolAta", new { id=item.UserId })
+        </td>
+    </tr>
+}
+
+</table>
